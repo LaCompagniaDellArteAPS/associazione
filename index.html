@@ -11,41 +11,46 @@
 <body>
   <header id="navbar" class="navbar">
     <div class="container nav-inner">
-      <a class="brand" href="#">
-        <img src="assets/logo.svg" alt="La Compagnia dell'Arte" class="logo">
-        <span class="brand-text">La Compagnia dell'Arte APS</span>
+      <a class="brand" href="#hero">
+        <img src="assets/logo.svg" alt="La Compagnia dell'Arte — logo" class="logo compact">
       </a>
+
+      <nav id="navMenu" class="nav-menu">
+        <ul>
+          <li><a class="nav-link" href="#about">CHI SIAMO</a></li>
+          <li><a class="nav-link" href="#work">COSA FACCIAMO</a></li>
+          <li><a class="nav-link" href="#adobiartis">ADOBIARTIS</a></li>
+          <li><a class="nav-link" href="#participate">PARTECIPA</a></li>
+          <li><a class="nav-link" href="#contact">CONTATTI</a></li>
+        </ul>
+      </nav>
 
       <button id="hamburger" class="hamburger" aria-label="Apri menu">
         <span></span>
         <span></span>
         <span></span>
       </button>
-
-      <nav id="navMenu" class="nav-menu">
-        <ul>
-          <li><a class="nav-link" href="#hero">Home</a></li>
-          <li><a class="nav-link" href="#about">Chi siamo</a></li>
-          <li><a class="nav-link" href="#events">Eventi</a></li>
-          <li><a class="nav-link" href="#participate">Partecipa</a></li>
-          <li><a class="nav-link" href="#contact">Contatti</a></li>
-        </ul>
-      </nav>
     </div>
   </header>
 
   <main>
     <section id="hero" class="hero section">
       <div class="container hero-grid">
-        <div class="hero-content">
-          <h1>La Compagnia dell'Arte APS</h1>
-          <p class="lead">Laboratori, performance e progetti artistici nel cuore di Sadali, Sardegna.</p>
-          <p>Promuoviamo la crescita culturale e la partecipazione comunitaria attraverso l'arte e il teatro popolare.</p>
-          <p><a class="btn" href="#participate">Partecipa</a></p>
+        <div class="hero-visual logo-panel" aria-hidden="true">
+          <!-- Use official logo file as primary visual element -->
+          <img src="assets/logo.svg" alt="La Compagnia dell'Arte — logo" class="logo hero-logo">
+          <!-- subtle geometric arcs as decorative layer -->
+          <img src="assets/hero-shape.svg" alt="Decorazione" class="hero-graphics" aria-hidden="true">
         </div>
 
-        <div class="hero-visual">
-          <img src="assets/hero-shape.svg" alt="Artistic shapes" class="artistic-shape">
+        <div class="hero-content">
+          <h1>“L’arte crea incontri.<br>Gli incontri fanno vivere i luoghi.”</h1>
+          <p class="lead">Siamo un’associazione culturale nata a Sadali, nel cuore della Sardegna, per creare occasioni di incontro attraverso arte, creatività, cultura e partecipazione.</p>
+
+          <p class="hero-ctas">
+            <a class="btn primary" href="#about">Scopri la Compagnia</a>
+            <a class="btn ghost" href="#participate">Partecipa</a>
+          </p>
         </div>
       </div>
     </section>
@@ -56,11 +61,11 @@
         <div class="grid">
           <div class="card" data-animate="true">
             <h3>Una comunità creativa</h3>
-            <p>Associazione di volontariato che organizza progetti culturali, residenze artistiche e laboratori per tutte le età.</p>
+            <p>Associazione che organizza progetti culturali, residenze artistiche e laboratori per tutte le età, con un approccio contemporaneo e partecipativo.</p>
           </div>
           <div class="card" data-animate="true">
             <h3>Promuoviamo la partecipazione</h3>
-            <p>Crediamo che l'arte sia uno strumento di inclusione sociale e crescita personale.</p>
+            <p>Crediamo che l'arte sia uno strumento di inclusione sociale e crescita personale, capace di rigenerare luoghi e relazioni.</p>
           </div>
           <div class="card" data-animate="true">
             <h3>Eventi e attività</h3>
@@ -70,34 +75,38 @@
       </div>
     </section>
 
-    <section id="events" class="section events">
+    <section id="work" class="section events">
       <div class="container">
-        <h2>Prossimi eventi</h2>
+        <h2>Cosa facciamo</h2>
         <div class="grid">
           <article class="card">
-            <h4>Laboratorio di teatro popolare</h4>
-            <p>Date: Primavera 2026</p>
-            <p>Un percorso aperto a tutti per scoprire il teatro come strumento di comunità.</p>
+            <h4>Laboratori</h4>
+            <p>Percorsi pratici per adulti e bambini che esplorano tecniche artistiche e performative.</p>
           </article>
 
           <article class="card">
-            <h4>Performance in piazza</h4>
-            <p>Date: Estate 2026</p>
-            <p>Spettacoli dal vivo con artisti locali e ospiti.</p>
+            <h4>Progetti pubblici</h4>
+            <p>Interventi site-specific, performance e iniziative che coinvolgono il tessuto locale.</p>
           </article>
 
           <article class="card">
-            <h4>Residenza artistica</h4>
-            <p>Date: Autunno 2026</p>
-            <p>Ospiti e collaborazioni per progetti sul patrimonio culturale del territorio.</p>
+            <h4>Residenze</h4>
+            <p>Programmi di residenza per artisti che collaborano con la comunità e il patrimonio locale.</p>
           </article>
         </div>
       </div>
     </section>
 
+    <section id="adobiartis" class="section">
+      <div class="container">
+        <h2>ADOBIARTIS</h2>
+        <p>Progetto e spazio dedicato alla sperimentazione artistica e alla condivisione delle pratiche creative.</p>
+      </div>
+    </section>
+
     <section id="participate" class="section participate">
       <div class="container">
-        <h2>Come partecipare</h2>
+        <h2>Partecipa</h2>
         <p>Puoi partecipare come volontario, artista o sostenitore. Contattaci per conoscere le modalità.</p>
         <div class="grid">
           <div class="participation-card card">
@@ -136,7 +145,7 @@
             </label>
           </div>
           <p>
-            <button class="btn" type="submit">Invia</button>
+            <button class="btn primary" type="submit">Invia</button>
           </p>
           <p class="fine-print">Nota: Questo form è dimostrativo; al momento non invia dati. Puoi contattarci via email su info@example.org</p>
         </form>
@@ -154,7 +163,7 @@
         <h4>Links</h4>
         <ul class="footer-links">
           <li><a href="#about">Chi siamo</a></li>
-          <li><a href="#events">Eventi</a></li>
+          <li><a href="#work">Cosa facciamo</a></li>
           <li><a href="#participate">Partecipa</a></li>
         </ul>
       </div>

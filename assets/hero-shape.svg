@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
-  <defs>
-    <linearGradient id="g" x1="0" x2="1">
-      <stop offset="0" stop-color="#D4734F" stop-opacity="0.12"/>
-      <stop offset="1" stop-color="#2B8A99" stop-opacity="0.08"/>
-    </linearGradient>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#g)"/>
-  <g transform="translate(80,60)">
-    <ellipse cx="200" cy="180" rx="180" ry="120" fill="#fff" opacity="0.04" />
-    <path d="M20 120 C140 10, 320 10, 420 120 C520 230, 680 230, 760 120 L760 300 L0 300 Z" fill="#D4734F" opacity="0.06" />
-    <circle cx="560" cy="80" r="60" fill="#2B8A99" opacity="0.08" />
+  <g fill="none" stroke="#087F87" stroke-width="6" opacity="0.18" stroke-linecap="round">
+    <path d="M120 420 C220 220, 380 220, 480 420"/>
+    <path d="M160 420 C260 260, 360 260, 460 420"/>
+    <path d="M200 420 C280 300, 340 300, 420 420"/>
+  </g>
+  <g fill="#087F87" opacity="0.06">
+    <ellipse cx="640" cy="140" rx="120" ry="60"/>
   </g>
 </svg>
