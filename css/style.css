@@ -125,6 +125,28 @@ body{
 .legal-page .page-intro{margin-bottom:2rem}
 .legal-page .legal-meta{background:var(--teal-soft);border-left:3px solid var(--teal);padding:1rem 1.2rem;border-radius:8px;margin:1rem 0}
 
+/* Vision editorial composition */
+.vision{padding:3.6rem 0;background:linear-gradient(180deg, rgba(8,127,135,0.01), rgba(255,255,255,0));}
+.vision .container{display:grid;grid-template-columns:1fr 420px;gap:2.5rem;align-items:start}
+.vision .lead-vision{font-size:1.05rem;color:var(--text);max-width:56ch}
+.vision-ideas{display:grid;grid-template-columns:1fr;gap:.8rem;margin-top:1.25rem}
+.vision-item{display:flex;gap:1rem;align-items:flex-start}
+.vision-mark{min-width:44px;height:44px;border-radius:8px;background:var(--teal);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:.9rem}
+.vision-text strong{display:block;font-weight:800;color:var(--text);margin-bottom:.25rem}
+.vision-graphic{display:none;align-self:center}
+
+/* Participate editorial */
+.participate-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.participate-card{background:var(--card);border-radius:12px;padding:1.25rem;color:var(--text);box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:space-between;min-height:200px}
+.participate-card h3{margin-top:0;color:var(--teal)}
+.participate-card p{color:var(--muted)}
+.participate-actions{margin-top:1rem}
+.participate-actions a{display:inline-block}
+
+/* Future highlights */
+.future-highlights{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1rem}
+.future-pill{background:var(--teal);color:#fff;padding:.6rem .9rem;border-radius:999px;font-weight:700}
+
 @media (max-width:1000px){
   .hero-grid{grid-template-columns:1fr;gap:2rem}
   .logo-panel{order:2}
@@ -136,6 +158,9 @@ body{
   .hamburger{display:block}
   .footer-content .footer-inner{grid-template-columns:1fr}
   .footer-legal{flex-direction:column}
+  .vision .container{grid-template-columns:1fr}
+  .vision-graphic{display:block;margin-top:1rem}
+  .participate-grid{grid-template-columns:1fr}
 }
 
 @media (max-width:600px){
@@ -146,6 +171,7 @@ body{
   .tile{min-height:120px}
   .footer-content .footer-inner{grid-template-columns:1fr}
   .footer-legal{flex-direction:column}
+  .vision .container{grid-template-columns:1fr}
 }
 
 a:focus{outline:3px solid rgba(8,127,135,0.12);outline-offset:3px}
