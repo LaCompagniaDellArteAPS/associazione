@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lacompagniadellarteaps.github.io/associazione/sitemap.xml
