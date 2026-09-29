@@ -3,16 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>La Compagnia dell'Arte APS — Sadali</title>
-  <meta name="description" content="Associazione culturale di Sadali (Sardegna) - laboratori, eventi e progetti artistici.">
+  <title>La Compagnia dell’Arte APS | Sadali</title>
+  <meta name="description" content="Arte, cultura e partecipazione nel cuore della Sardegna. La Compagnia dell'Arte APS nasce a Sadali per creare incontri, progetti ed esperienze attraverso l’arte.">
+
+  <!-- Open Graph / Social preview (absolute URLs to account for GitHub Pages under /associazione/) -->
+  <meta property="og:title" content="La Compagnia dell’Arte APS | Sadali">
+  <meta property="og:description" content="Arte, cultura e partecipazione nel cuore della Sardegna. La Compagnia dell'Arte APS nasce a Sadali per creare incontri, progetti ed esperienze attraverso l’arte.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://LaCompagniaDellArteAPS.github.io/associazione/assets/La_Compagnia_dell_Arte_APS_logo_transparent.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="La Compagnia dell’Arte APS | Sadali">
+  <meta name="twitter:description" content="Arte, cultura e partecipazione nel cuore della Sardegna. La Compagnia dell'Arte APS nasce a Sadali per creare incontri, progetti ed esperienze attraverso l’arte.">
+  <meta name="twitter:image" content="https://LaCompagniaDellArteAPS.github.io/associazione/assets/La_Compagnia_dell_Arte_APS_logo_transparent.png">
+
+  <link rel="image_src" href="assets/La_Compagnia_dell_Arte_APS_logo_transparent.png">
+  <link rel="icon" href="assets/La_Compagnia_dell_Arte_APS_logo_transparent.png" type="image/png">
+
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 </head>
 <body>
   <header id="navbar" class="navbar">
     <div class="container nav-inner">
       <a class="brand" href="#hero">
-        <img src="assets/logo.svg" alt="La Compagnia dell'Arte — logo" class="logo compact">
+        <!-- compact header logo (use official file exactly) -->
+        <img src="assets/La_Compagnia_dell_Arte_APS_logo_transparent.png" alt="La Compagnia dell'Arte — logo" class="logo compact header-logo">
       </a>
 
       <nav id="navMenu" class="nav-menu">
@@ -37,8 +52,8 @@
     <section id="hero" class="hero section">
       <div class="container hero-grid">
         <div class="hero-visual logo-panel" aria-hidden="true">
-          <!-- Use official logo file as primary visual element -->
-          <img src="assets/logo.svg" alt="La Compagnia dell'Arte — logo" class="logo hero-logo">
+          <!-- Use official logo file as primary visual element (relative path) -->
+          <img src="assets/La_Compagnia_dell_Arte_APS_logo_transparent.png" alt="La Compagnia dell'Arte — logo" class="logo hero-logo">
           <!-- subtle geometric arcs as decorative layer -->
           <img src="assets/hero-shape.svg" alt="Decorazione" class="hero-graphics" aria-hidden="true">
         </div>
@@ -75,21 +90,21 @@
       </div>
     </section>
 
-    <section id="work" class="section events">
+    <section id="work" class="section work">
       <div class="container">
         <h2>Cosa facciamo</h2>
         <div class="grid">
-          <article class="card">
+          <article class="tile">
             <h4>Laboratori</h4>
             <p>Percorsi pratici per adulti e bambini che esplorano tecniche artistiche e performative.</p>
           </article>
 
-          <article class="card">
+          <article class="tile">
             <h4>Progetti pubblici</h4>
             <p>Interventi site-specific, performance e iniziative che coinvolgono il tessuto locale.</p>
           </article>
 
-          <article class="card">
+          <article class="tile">
             <h4>Residenze</h4>
             <p>Programmi di residenza per artisti che collaborano con la comunità e il patrimonio locale.</p>
           </article>
@@ -97,7 +112,7 @@
       </div>
     </section>
 
-    <section id="adobiartis" class="section">
+    <section id="adobiartis" class="section adobiartis">
       <div class="container">
         <h2>ADOBIARTIS</h2>
         <p>Progetto e spazio dedicato alla sperimentazione artistica e alla condivisione delle pratiche creative.</p>
@@ -122,6 +137,13 @@
             <p>Sostieni i nostri progetti con una donazione o collaborando con risorse.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="sadali" class="section sadali">
+      <div class="container">
+        <h2>Sadali</h2>
+        <p>Sadali è il luogo che ispira i nostri progetti: paesaggio, comunità e tradizione. Lavoriamo per connettere arte e territorio in modo sostenibile e partecipato.</p>
       </div>
     </section>
 
@@ -155,8 +177,8 @@
 
   <footer class="site-footer">
     <div class="container footer-grid">
-      <div>
-        <img src="assets/logo.svg" alt="logo" class="logo small">
+      <div class="footer-brand">
+        <img src="assets/La_Compagnia_dell_Arte_APS_logo_transparent.png" alt="logo" class="logo small footer-logo">
         <p>La Compagnia dell'Arte APS — Sadali</p>
       </div>
       <div>
