@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" width="320" height="64" role="img" aria-label="La Compagnia dell'Arte logo">
+  <rect width="320" height="64" rx="8" fill="#2B8A99"/>
+  <g transform="translate(12,8)">
+    <circle cx="28" cy="24" r="18" fill="#D4734F" />
+    <text x="60" y="34" font-family="Arial, sans-serif" font-size="18" fill="#fff">La Compagnia</text>
+  </g>
+</svg>
