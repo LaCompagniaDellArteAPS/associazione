@@ -6,7 +6,6 @@
   <title>La Compagnia dell’Arte APS | Sadali</title>
   <meta name="description" content="Arte, cultura e partecipazione nel cuore della Sardegna. La Compagnia dell'Arte APS nasce a Sadali per creare incontri, progetti ed esperienze attraverso l’arte.">
 
-  <!-- Open Graph / Social preview (absolute URLs to account for GitHub Pages under /associazione/) -->
   <meta property="og:title" content="La Compagnia dell’Arte APS | Sadali">
   <meta property="og:description" content="Arte, cultura e partecipazione nel cuore della Sardegna. La Compagnia dell'Arte APS nasce a Sadali per creare incontri, progetti ed esperienze attraverso l’arte.">
   <meta property="og:type" content="website">
@@ -19,14 +18,12 @@
 
   <link rel="image_src" href="assets/La_Compagnia_dell_Arte_APS_logo_transparent.png">
   <link rel="icon" href="assets/La_Compagnia_dell_Arte_APS_logo_transparent.png" type="image/png">
-
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header id="navbar" class="navbar">
     <div class="container nav-inner">
       <a class="brand" href="#hero">
-        <!-- compact header logo (use official file exactly) -->
         <img src="assets/La_Compagnia_dell_Arte_APS_logo_transparent.png" alt="La Compagnia dell'Arte — logo" class="logo compact header-logo">
       </a>
 
@@ -34,7 +31,7 @@
         <ul>
           <li><a class="nav-link" href="#about">CHI SIAMO</a></li>
           <li><a class="nav-link" href="#work">COSA FACCIAMO</a></li>
-          <li><a class="nav-link" href="#adobiartis">ADOBIARTIS</a></li>
+          <li><a class="nav-link" href="https://adobiartis.github.io/2026/" target="_blank" rel="noopener noreferrer">ADOBIARTIS</a></li>
           <li><a class="nav-link" href="#participate">PARTECIPA</a></li>
           <li><a class="nav-link" href="#contact">CONTATTI</a></li>
         </ul>
@@ -52,9 +49,7 @@
     <section id="hero" class="hero section">
       <div class="container hero-grid">
         <div class="hero-visual logo-panel" aria-hidden="true">
-          <!-- Use official logo file as primary visual element (relative path) -->
           <img src="assets/La_Compagnia_dell_Arte_APS_logo_transparent.png" alt="La Compagnia dell'Arte — logo" class="logo hero-logo">
-          <!-- subtle geometric arcs as decorative layer -->
           <img src="assets/hero-shape.svg" alt="Decorazione" class="hero-graphics" aria-hidden="true">
         </div>
 
@@ -113,9 +108,15 @@
     </section>
 
     <section id="adobiartis" class="section adobiartis">
-      <div class="container">
-        <h2>ADOBIARTIS</h2>
-        <p>Progetto e spazio dedicato alla sperimentazione artistica e alla condivisione delle pratiche creative.</p>
+      <div class="container adobiartis-layout">
+        <div>
+          <h2>ADOBIARTIS</h2>
+          <p>Progetto e spazio dedicato alla sperimentazione artistica e alla condivisione delle pratiche creative, promosso all’interno della nostra associazione come laboratorio di arte, cultura e partecipazione nel territorio.</p>
+          <p class="cta-row">
+            <a class="btn primary" href="https://adobiartis.github.io/2026/" target="_blank" rel="noopener noreferrer">Scopri AdobiArtis</a>
+            <a class="btn ghost" href="https://adobiartis.github.io/2026/" target="_blank" rel="noopener noreferrer">Visita il sito</a>
+          </p>
+        </div>
       </div>
     </section>
 
@@ -169,7 +170,7 @@
           <p>
             <button class="btn primary" type="submit">Invia</button>
           </p>
-          <p class="fine-print">Nota: Questo form è dimostrativo; al momento non invia dati. Puoi contattarci via email su info@example.org</p>
+          <p class="fine-print">Nota: questo form è dimostrativo. Per contatti ufficiali scrivi a <a href="mailto:lacompagniadellarteaps@pec.it">lacompagniadellarteaps@pec.it</a>.</p>
         </form>
       </div>
     </section>
@@ -177,26 +178,33 @@
 
   <footer class="site-footer">
     <div class="container footer-grid">
-      <div class="footer-brand">
-        <img src="assets/La_Compagnia_dell_Arte_APS_logo_transparent.png" alt="logo" class="logo small footer-logo">
-        <p>La Compagnia dell'Arte APS — Sadali</p>
+      <div class="footer-brand-block">
+        <img src="assets/La_Compagnia_dell_Arte_APS_logo_transparent.png" alt="La Compagnia dell'Arte APS" class="logo small footer-logo">
+        <h4>LA COMPAGNIA DELL’ARTE APS</h4>
+        <p>Sadali (SU) · Sardegna</p>
+        <p>Associazione di Promozione Sociale</p>
+        <p><a href="mailto:lacompagniadellarteaps@pec.it">lacompagniadellarteaps@pec.it</a></p>
       </div>
+
       <div>
-        <h4>Links</h4>
+        <h4>PROGETTI</h4>
         <ul class="footer-links">
-          <li><a href="#about">Chi siamo</a></li>
-          <li><a href="#work">Cosa facciamo</a></li>
-          <li><a href="#participate">Partecipa</a></li>
+          <li><a href="https://adobiartis.github.io/2026/" target="_blank" rel="noopener noreferrer">AdobiArtis – La Festa dell’Arte ↗</a></li>
         </ul>
       </div>
+
       <div>
-        <h4>Contatti</h4>
-        <p>Email: <a href="mailto:info@example.org">info@example.org</a></p>
-        <p>Sadali, Sardegna</p>
+        <h4>INFORMAZIONI</h4>
+        <ul class="footer-links legal-links">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="cookie-policy.html">Cookie Policy</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+        </ul>
       </div>
     </div>
-    <div class="container copyright">
-      <small>© La Compagnia dell'Arte APS — Tutti i diritti riservati</small>
+
+    <div class="container footer-bottom-line">
+      <small>© 2026 La Compagnia dell’Arte APS · Tutti i diritti riservati</small>
     </div>
   </footer>
 
