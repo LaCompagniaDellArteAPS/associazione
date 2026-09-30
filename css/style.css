@@ -65,12 +65,16 @@ html {
 
 body {
   margin: 0;
+
   background: var(--off-white);
   color: var(--text);
+
   font-family: var(--font-sans);
   font-size: 16px;
   line-height: 1.65;
+
   -webkit-font-smoothing: antialiased;
+
   overflow-x: hidden;
 }
 
@@ -107,11 +111,13 @@ p {
     var(--container),
     calc(100% - 48px)
   );
+
   margin-inline: auto;
 }
 
 .section {
   position: relative;
+
   padding-block: var(--section-space);
 }
 
@@ -132,6 +138,7 @@ h3 {
 
 h1 {
   margin-bottom: 30px;
+
   font-size: clamp(3rem, 6.3vw, 6.5rem);
   font-weight: 650;
   line-height: 0.98;
@@ -140,7 +147,9 @@ h1 {
 
 h2 {
   max-width: 900px;
+
   margin-bottom: 30px;
+
   font-size: clamp(2.3rem, 4.5vw, 4.8rem);
   font-weight: 620;
   line-height: 1.02;
@@ -159,16 +168,20 @@ p {
 .lead {
   font-size: clamp(1.15rem, 1.7vw, 1.45rem);
   line-height: 1.55;
+
   color: var(--muted);
 }
 
 .section-label {
   margin-bottom: 24px;
+
   color: var(--teal);
+
   font-size: 0.72rem;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0.2em;
+
   text-transform: uppercase;
 }
 
@@ -183,6 +196,7 @@ p {
   justify-content: center;
 
   min-height: 48px;
+
   padding: 12px 21px;
 
   border: 1px solid transparent;
@@ -217,6 +231,7 @@ p {
 
 .btn.ghost {
   border-color: var(--teal);
+
   background: transparent;
   color: var(--teal);
 }
@@ -238,6 +253,7 @@ p {
   z-index: 1000;
 
   background: rgba(250, 250, 248, 0.94);
+
   border-bottom: 1px solid rgba(41, 41, 41, 0.07);
 
   backdrop-filter: blur(12px);
@@ -257,13 +273,16 @@ p {
 .brand {
   display: inline-flex;
   align-items: center;
+
   flex: 0 0 auto;
+
   text-decoration: none;
 }
 
 .header-logo {
   width: auto;
   height: 53px;
+
   object-fit: contain;
 }
 
@@ -295,6 +314,7 @@ p {
   content: "";
 
   position: absolute;
+
   left: 0;
   right: 100%;
   bottom: -7px;
@@ -325,6 +345,7 @@ p {
   padding: 10px;
 
   border: 0;
+
   background: transparent;
 
   cursor: pointer;
@@ -346,6 +367,7 @@ p {
 
 /* =========================================================
    8. HERO
+   Larger logo + more controlled headline
    ========================================================= */
 
 .hero {
@@ -359,11 +381,12 @@ p {
 
 .hero-grid {
   display: grid;
-  grid-template-columns:
-    minmax(260px, 0.8fr)
-    minmax(0, 1.35fr);
 
-  gap: clamp(55px, 9vw, 130px);
+  grid-template-columns:
+    minmax(360px, 0.95fr)
+    minmax(0, 1.15fr);
+
+  gap: clamp(60px, 7vw, 105px);
 
   align-items: center;
 }
@@ -371,7 +394,7 @@ p {
 .hero-visual {
   position: relative;
 
-  min-height: 410px;
+  min-height: 500px;
 
   display: flex;
   align-items: center;
@@ -382,7 +405,7 @@ p {
   position: relative;
   z-index: 2;
 
-  width: min(100%, 340px);
+  width: min(100%, 440px);
   height: auto;
 }
 
@@ -390,32 +413,47 @@ p {
   position: absolute;
   z-index: 1;
 
-  width: min(125%, 430px);
+  width: min(120%, 500px);
 
-  opacity: 0.12;
+  opacity: 0.10;
 
   pointer-events: none;
 }
 
 .hero-content {
-  max-width: 760px;
+  max-width: 690px;
+}
+
+.hero-content h1 {
+  max-width: 680px;
+
+  margin-bottom: 30px;
+
+  font-size: clamp(3rem, 4.8vw, 5.3rem);
+  font-weight: 650;
+  line-height: 1.02;
+  letter-spacing: -0.05em;
 }
 
 .hero-content .lead {
   max-width: 580px;
+
   margin-bottom: 34px;
+
+  font-size: clamp(1.1rem, 1.45vw, 1.35rem);
+  line-height: 1.55;
 }
 
 .hero-ctas {
   display: flex;
   flex-wrap: wrap;
+
   gap: 12px;
 }
 
 
 /* =========================================================
    9. EDITORIAL SYSTEM
-   Used for About / Future / Sadali
    ========================================================= */
 
 .about,
@@ -431,6 +469,7 @@ p {
 .about-content,
 .sadali-content {
   display: grid;
+
   grid-template-columns:
     minmax(0, 1.15fr)
     minmax(280px, 0.85fr);
@@ -454,12 +493,14 @@ p {
 .about-text,
 .sadali-text {
   grid-column: 2;
+
   padding-top: 10px;
 }
 
 .about-text p,
 .sadali-text p {
   color: var(--muted);
+
   font-size: 1.06rem;
 }
 
@@ -476,15 +517,9 @@ p {
 
 
 /* =========================================================
-   10. ONE GEOMETRIC ACCENT SYSTEM
+   10. GEOMETRIC ACCENT SYSTEM
+   One accent only per editorial section
    ========================================================= */
-
-/*
-   IMPORTANT:
-   Squares are punctuation, not decoration.
-
-   Maximum one accent per editorial section.
-*/
 
 .about::after,
 .future::after,
@@ -494,6 +529,7 @@ p {
   position: absolute;
 
   width: clamp(42px, 5vw, 70px);
+
   aspect-ratio: 1;
 
   background: var(--teal);
@@ -502,18 +538,31 @@ p {
 }
 
 .about::after {
-  right: max(24px, calc((100vw - var(--container)) / 2));
+  right: max(
+    24px,
+    calc((100vw - var(--container)) / 2)
+  );
+
   bottom: 45px;
 }
 
 .future::after {
-  left: max(24px, calc((100vw - var(--container)) / 2));
+  left: max(
+    24px,
+    calc((100vw - var(--container)) / 2)
+  );
+
   top: 50%;
+
   transform: translateY(-50%);
 }
 
 .sadali::after {
-  right: max(24px, calc((100vw - var(--container)) / 2));
+  right: max(
+    24px,
+    calc((100vw - var(--container)) / 2)
+  );
+
   bottom: 48px;
 }
 
@@ -532,6 +581,7 @@ p {
 
 .work-grid {
   display: grid;
+
   grid-template-columns: repeat(4, 1fr);
 
   gap: 0;
@@ -547,6 +597,7 @@ p {
 
 .work-item + .work-item {
   padding-left: 25px;
+
   border-left: 1px solid var(--teal-line);
 }
 
@@ -583,6 +634,7 @@ p {
 
 .adobiartis-content {
   max-width: 880px;
+
   margin-inline: auto;
 }
 
@@ -611,6 +663,7 @@ p {
 
 .adobiartis-content > p:not(.lead) {
   max-width: 630px;
+
   margin: 0 auto 48px;
 
   color: rgba(255, 255, 255, 0.88);
@@ -634,6 +687,7 @@ p {
 
 .adobiartis .btn.primary {
   border: 1px solid var(--white);
+
   background: var(--white);
   color: var(--teal);
 }
@@ -705,11 +759,13 @@ p {
 
 .participate-intro {
   max-width: 620px;
+
   margin-bottom: clamp(55px, 7vw, 85px);
 }
 
 .participate-grid {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
 
   gap: clamp(28px, 4vw, 55px);
@@ -774,7 +830,9 @@ p {
 .participate-card .btn:hover,
 .participate-card .btn:focus-visible {
   background: transparent;
+
   color: var(--teal-dark);
+
   transform: translateX(4px);
 }
 
@@ -837,6 +895,7 @@ p {
 
 .contact a {
   color: var(--white);
+
   text-decoration-thickness: 1px;
   text-underline-offset: 4px;
 }
@@ -952,6 +1011,7 @@ footer {
   margin-top: 7px;
 
   color: inherit;
+
   text-decoration: none;
 }
 
@@ -1013,6 +1073,7 @@ footer {
   color: #667e80;
 
   font-weight: 400;
+
   text-decoration: none;
 }
 
@@ -1042,7 +1103,10 @@ footer {
    ========================================================= */
 
 .legal-page {
-  width: min(850px, calc(100% - 48px));
+  width: min(
+    850px,
+    calc(100% - 48px)
+  );
 
   margin-inline: auto;
 
@@ -1139,14 +1203,30 @@ button:focus-visible {
 
 @media (max-width: 900px) {
 
+  /* HERO */
+
   .hero-grid {
-    grid-template-columns: 0.7fr 1.3fr;
-    gap: 50px;
+    grid-template-columns:
+      minmax(280px, 0.9fr)
+      minmax(0, 1.1fr);
+
+    gap: 45px;
   }
 
   .hero-visual {
-    min-height: 320px;
+    min-height: 380px;
   }
+
+  .hero-logo {
+    width: min(100%, 350px);
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.8rem, 6vw, 4.3rem);
+  }
+
+
+  /* WORK */
 
   .work-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1154,6 +1234,7 @@ button:focus-visible {
 
   .work-item {
     padding: 28px 25px 30px 0;
+
     border-bottom: 1px solid var(--teal-line);
   }
 
@@ -1163,8 +1244,12 @@ button:focus-visible {
 
   .work-item:nth-child(3) {
     padding-left: 0;
+
     border-left: 0;
   }
+
+
+  /* PARTECIPA */
 
   .participate-grid {
     gap: 28px;
@@ -1184,9 +1269,7 @@ button:focus-visible {
   }
 
 
-  /* -----------------------------------------
-     GENERAL
-     ----------------------------------------- */
+  /* GENERAL */
 
   .container {
     width: min(
@@ -1204,9 +1287,7 @@ button:focus-visible {
   }
 
 
-  /* -----------------------------------------
-     NAVIGATION
-     ----------------------------------------- */
+  /* NAVIGATION */
 
   .nav-inner {
     min-height: 68px;
@@ -1232,6 +1313,7 @@ button:focus-visible {
     padding: 25px 18px 30px;
 
     background: var(--off-white);
+
     border-bottom: 1px solid var(--line);
   }
 
@@ -1255,54 +1337,57 @@ button:focus-visible {
   }
 
 
-  /* -----------------------------------------
-     HERO
-     ----------------------------------------- */
+  /* HERO */
 
   .hero {
     min-height: auto;
 
-    padding-top: 70px;
-    padding-bottom: 85px;
+    padding-top: 60px;
+    padding-bottom: 80px;
   }
 
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 48px;
+
+    gap: 45px;
   }
 
   .hero-visual {
-    min-height: 230px;
+    min-height: auto;
 
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .hero-logo {
-    width: min(70vw, 270px);
+    width: min(78vw, 310px);
   }
 
   .hero-graphics {
-    width: min(85vw, 330px);
+    width: min(90vw, 350px);
+  }
 
-    left: -30px;
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-content h1 {
+    max-width: 100%;
+
+    font-size: clamp(2.65rem, 11vw, 4rem);
+    line-height: 1;
   }
 
   .hero-content .lead {
     margin-bottom: 28px;
   }
 
-  .hero-ctas {
-    align-items: flex-start;
-  }
 
-
-  /* -----------------------------------------
-     EDITORIAL SECTIONS
-     ----------------------------------------- */
+  /* EDITORIAL */
 
   .about-content,
   .sadali-content {
     grid-template-columns: 1fr;
+
     row-gap: 15px;
   }
 
@@ -1321,9 +1406,7 @@ button:focus-visible {
   }
 
 
-  /* -----------------------------------------
-     ACCENTS
-     ----------------------------------------- */
+  /* ACCENTS */
 
   .about::after,
   .future::after,
@@ -1339,6 +1422,7 @@ button:focus-visible {
   .future::after {
     left: auto;
     right: 18px;
+
     top: auto;
     bottom: 22px;
 
@@ -1351,9 +1435,7 @@ button:focus-visible {
   }
 
 
-  /* -----------------------------------------
-     WORK
-     ----------------------------------------- */
+  /* WORK */
 
   .work h2 {
     margin-bottom: 50px;
@@ -1379,9 +1461,7 @@ button:focus-visible {
   }
 
 
-  /* -----------------------------------------
-     ADOBIARTIS
-     ----------------------------------------- */
+  /* ADOBIARTIS */
 
   .adobiartis h2 {
     font-size: clamp(3.5rem, 17vw, 6rem);
@@ -1400,9 +1480,7 @@ button:focus-visible {
   }
 
 
-  /* -----------------------------------------
-     FUTURE
-     ----------------------------------------- */
+  /* FUTURE */
 
   .future .container {
     padding-left: 0;
@@ -1417,9 +1495,7 @@ button:focus-visible {
   }
 
 
-  /* -----------------------------------------
-     PARTECIPA
-     ----------------------------------------- */
+  /* PARTECIPA */
 
   .participate-intro {
     margin-bottom: 48px;
@@ -1427,6 +1503,7 @@ button:focus-visible {
 
   .participate-grid {
     grid-template-columns: 1fr;
+
     gap: 48px;
   }
 
@@ -1435,9 +1512,7 @@ button:focus-visible {
   }
 
 
-  /* -----------------------------------------
-     CONTACT
-     ----------------------------------------- */
+  /* CONTACT */
 
   .contact {
     padding-block: 65px;
@@ -1448,9 +1523,7 @@ button:focus-visible {
   }
 
 
-  /* -----------------------------------------
-     FOOTER
-     ----------------------------------------- */
+  /* FOOTER */
 
   footer {
     padding-top: 28px;
@@ -1472,9 +1545,7 @@ button:focus-visible {
   }
 
 
-  /* -----------------------------------------
-     LEGAL
-     ----------------------------------------- */
+  /* LEGAL */
 
   .legal-page {
     width: calc(100% - 36px);
@@ -1504,6 +1575,10 @@ button:focus-visible {
    ========================================================= */
 
 @media (max-width: 480px) {
+
+  .hero-logo {
+    width: min(82vw, 290px);
+  }
 
   .hero-ctas {
     flex-direction: column;
