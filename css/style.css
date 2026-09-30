@@ -1,166 +1,331 @@
 /* =========================================================
    LA COMPAGNIA DELL'ARTE APS
-   Main stylesheet
-========================================================= */
+   MASTER STYLESHEET
+   ========================================================= */
+
+
+/* =========================================================
+   1. DESIGN TOKENS
+   ========================================================= */
 
 :root {
-  --teal: #087F87;
-  --teal-900: #065b5b;
-  --teal-soft: rgba(8,127,135,0.08);
+  --teal: #087f87;
+  --teal-dark: #066970;
+  --teal-soft: #e8f2f2;
 
-  --text: #292929;
-  --muted: #6f7372;
+  --charcoal: #292929;
+  --text: #303535;
+  --muted: #6d7575;
 
-  --bg: #fbfdfc;
-  --card: #ffffff;
+  --white: #ffffff;
+  --off-white: #fafaf8;
+  --light-grey: #f3f5f4;
 
-  --shadow: 0 8px 28px rgba(16,22,26,0.06);
+  --line: rgba(41, 41, 41, 0.12);
+  --teal-line: rgba(8, 127, 135, 0.22);
 
-  --container-width: 1100px;
-  --radius: 10px;
+  --footer-bg: #f1f3f2;
+  --footer-text: #087f87;
+  --footer-muted: rgba(8, 127, 135, 0.72);
+  --footer-divider: rgba(8, 127, 135, 0.15);
 
-  /* Footer */
-  --footer-bg: #F1F3F2;
-  --footer-text: #087F87;
-  --footer-muted: rgba(8,127,135,0.72);
-  --footer-divider: rgba(8,127,135,0.15);
+  --container: 1120px;
+
+  --section-space: clamp(90px, 10vw, 150px);
+
+  --font-sans:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  --font-serif:
+    Georgia,
+    "Times New Roman",
+    serif;
 }
 
 
 /* =========================================================
-   BASE
-========================================================= */
+   2. RESET
+   ========================================================= */
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-html,
-body {
-  height: 100%;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-
-  font-family:
-    Inter,
-    system-ui,
-    -apple-system,
-    "Segoe UI",
-    Roboto,
-    "Helvetica Neue",
-    Arial,
-    sans-serif;
-
-  background: var(--bg);
+  background: var(--off-white);
   color: var(--text);
-
-  line-height: 1.5;
-
-  opacity: 1;
-  transition: opacity .4s ease;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-.container {
-  max-width: var(--container-width);
-  margin: 0 auto;
-  padding: 1.25rem;
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
 }
 
 
 /* =========================================================
-   NAVIGATION
-========================================================= */
+   3. GLOBAL LAYOUT
+   ========================================================= */
+
+.container {
+  width: min(
+    var(--container),
+    calc(100% - 48px)
+  );
+  margin-inline: auto;
+}
+
+.section {
+  position: relative;
+  padding-block: var(--section-space);
+}
+
+section {
+  scroll-margin-top: 90px;
+}
+
+
+/* =========================================================
+   4. TYPOGRAPHY
+   ========================================================= */
+
+h1,
+h2,
+h3 {
+  color: var(--charcoal);
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-size: clamp(3rem, 6.3vw, 6.5rem);
+  font-weight: 650;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+h2 {
+  max-width: 900px;
+  margin-bottom: 30px;
+  font-size: clamp(2.3rem, 4.5vw, 4.8rem);
+  font-weight: 620;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+h3 {
+  font-size: 1.15rem;
+  line-height: 1.3;
+}
+
+p {
+  max-width: 680px;
+}
+
+.lead {
+  font-size: clamp(1.15rem, 1.7vw, 1.45rem);
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.section-label {
+  margin-bottom: 24px;
+  color: var(--teal);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   5. BUTTONS
+   ========================================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+  padding: 12px 21px;
+
+  border: 1px solid transparent;
+
+  font-size: 0.83rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+
+  text-decoration: none;
+
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-2px);
+}
+
+.btn.primary {
+  background: var(--teal);
+  color: var(--white);
+}
+
+.btn.primary:hover,
+.btn.primary:focus-visible {
+  background: var(--teal-dark);
+}
+
+.btn.ghost {
+  border-color: var(--teal);
+  background: transparent;
+  color: var(--teal);
+}
+
+.btn.ghost:hover,
+.btn.ghost:focus-visible {
+  background: var(--teal);
+  color: var(--white);
+}
+
+
+/* =========================================================
+   6. NAVIGATION
+   ========================================================= */
 
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 40;
+  z-index: 1000;
 
-  background: rgba(255,255,255,0.9);
+  background: rgba(250, 250, 248, 0.94);
+  border-bottom: 1px solid rgba(41, 41, 41, 0.07);
 
-  backdrop-filter:
-    saturate(120%)
-    blur(4px);
-
-  border-bottom:
-    1px solid rgba(16,22,26,0.04);
-
-  transition:
-    background .25s ease,
-    box-shadow .25s ease;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .nav-inner {
+  min-height: 76px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  gap: 1rem;
+  gap: 30px;
 }
 
 .brand {
-  display: flex;
-  gap: .75rem;
-
+  display: inline-flex;
   align-items: center;
-
+  flex: 0 0 auto;
   text-decoration: none;
-  color: inherit;
 }
 
-.logo {
-  height: 48px;
-}
-
-.logo.compact {
-  height: 38px;
-}
-
-.logo.small {
-  height: 44px;
+.header-logo {
+  width: auto;
+  height: 53px;
+  object-fit: contain;
 }
 
 .nav-menu ul {
-  list-style: none;
+  display: flex;
+  align-items: center;
+
+  gap: clamp(20px, 2.8vw, 38px);
 
   margin: 0;
   padding: 0;
 
-  display: flex;
-  gap: 1.25rem;
-
-  align-items: center;
+  list-style: none;
 }
 
-.nav-menu a {
-  color: var(--text);
+.nav-link {
+  position: relative;
+
+  color: var(--charcoal);
+
+  font-size: 0.69rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
 
   text-decoration: none;
-
-  padding: .4rem .6rem;
-
-  border-radius: 6px;
-
-  font-weight: 700;
-  font-size: .95rem;
-
-  letter-spacing: .02em;
 }
 
-.nav-menu a:hover,
-.nav-menu a:focus {
-  color: var(--teal);
+.nav-link::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -7px;
+
+  height: 2px;
+
+  background: var(--teal);
+
+  transition: right 180ms ease;
 }
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  right: 0;
+}
+
+
+/* =========================================================
+   7. MOBILE MENU BUTTON
+   ========================================================= */
 
 .hamburger {
   display: none;
 
-  background: none;
-  border: 0;
+  width: 44px;
+  height: 44px;
 
-  padding: .25rem;
+  padding: 10px;
+
+  border: 0;
+  background: transparent;
 
   cursor: pointer;
 }
@@ -168,630 +333,527 @@ body {
 .hamburger span {
   display: block;
 
-  width: 26px;
+  width: 23px;
   height: 2px;
 
-  background: var(--text);
+  margin: 5px auto;
 
-  margin: 5px 0;
+  background: var(--charcoal);
 
-  transition: all .25s ease;
-}
-
-.hamburger.active span:nth-child(1) {
-  transform:
-    translateY(7px)
-    rotate(45deg);
-}
-
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-  transform:
-    translateY(-7px)
-    rotate(-45deg);
-}
-
-.navbar.scrolled {
-  box-shadow:
-    0 10px 32px rgba(16,22,26,0.06);
+  transition: 180ms ease;
 }
 
 
 /* =========================================================
-   HERO
-========================================================= */
+   8. HERO
+   ========================================================= */
 
 .hero {
-  padding: 5.2rem 0;
-
-  min-height: 62vh;
+  min-height: calc(100vh - 76px);
 
   display: flex;
   align-items: center;
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(8,127,135,0.02) 0%,
-      var(--bg) 100%
-    );
+  background: var(--off-white);
 }
 
 .hero-grid {
   display: grid;
-
   grid-template-columns:
-    520px 1fr;
+    minmax(260px, 0.8fr)
+    minmax(0, 1.35fr);
 
-  gap: 3rem;
+  gap: clamp(55px, 9vw, 130px);
 
   align-items: center;
 }
 
-.logo-panel {
-  display: flex;
+.hero-visual {
+  position: relative;
 
+  min-height: 410px;
+
+  display: flex;
   align-items: center;
   justify-content: center;
-
-  position: relative;
 }
 
 .hero-logo {
-  max-width: 420px;
+  position: relative;
+  z-index: 2;
 
+  width: min(100%, 340px);
   height: auto;
-
-  display: block;
 }
 
 .hero-graphics {
   position: absolute;
+  z-index: 1;
 
-  inset: auto;
+  width: min(125%, 430px);
 
-  right: -40px;
-  bottom: -20px;
-
-  width: 420px;
-
-  opacity: .18;
+  opacity: 0.12;
 
   pointer-events: none;
 }
 
-.hero-content h1 {
-  font-size:
-    clamp(
-      1.6rem,
-      3.2vw,
-      2.6rem
-    );
-
-  margin:
-    0 0 .8rem;
-
-  font-weight: 800;
-
-  line-height: 1.06;
-
-  color: var(--text);
+.hero-content {
+  max-width: 760px;
 }
 
-.lead {
-  color: var(--text);
-
-  margin-bottom: 1.25rem;
-
-  max-width: 56ch;
+.hero-content .lead {
+  max-width: 580px;
+  margin-bottom: 34px;
 }
 
 .hero-ctas {
   display: flex;
-
-  gap: 1rem;
-
-  align-items: center;
-
   flex-wrap: wrap;
+  gap: 12px;
 }
 
 
 /* =========================================================
-   BUTTONS
-========================================================= */
+   9. EDITORIAL SYSTEM
+   Used for About / Future / Sadali
+   ========================================================= */
 
-.btn {
-  display: inline-block;
-
-  padding:
-    .7rem 1.05rem;
-
-  border-radius: 10px;
-
-  text-decoration: none;
-
-  font-weight: 800;
-  font-size: 1rem;
-
-  border: 0;
+.about,
+.future,
+.sadali {
+  overflow: hidden;
 }
-
-.btn.primary {
-  background: var(--teal);
-
-  color: #fff;
-
-  box-shadow: none;
-}
-
-.btn.primary:hover {
-  background: var(--teal-900);
-}
-
-.btn.ghost {
-  background: transparent;
-
-  border:
-    1px solid rgba(41,41,41,0.06);
-
-  color: var(--text);
-}
-
-.btn.ghost:hover {
-  border-color: var(--teal);
-
-  color: var(--teal);
-}
-
-
-/* =========================================================
-   GENERAL SECTIONS
-========================================================= */
-
-.section {
-  padding: 3.2rem 0;
-}
-
-.section-label {
-  font-size: .75rem;
-
-  letter-spacing: .08em;
-
-  font-weight: 800;
-
-  text-transform: uppercase;
-
-  color: var(--teal);
-
-  margin-bottom: .6rem;
-}
-
-.grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
-  gap: 1.25rem;
-}
-
-.card {
-  background: var(--card);
-
-  padding: 1.25rem;
-
-  border-radius: var(--radius);
-
-  box-shadow: var(--shadow);
-
-  transition:
-    transform .28s ease;
-}
-
-.card h3,
-.card h4 {
-  margin-top: 0;
-}
-
-
-/* =========================================================
-   ABOUT
-========================================================= */
 
 .about {
-  background: var(--teal);
-
-  color: #fff;
-
-  padding: 3.5rem 0;
+  background: var(--white);
 }
 
-.about-content {
-  max-width: 720px;
+.about-content,
+.sadali-content {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(280px, 0.85fr);
 
-  margin: 0 auto;
+  column-gap: clamp(55px, 9vw, 130px);
+  row-gap: 24px;
+
+  align-items: start;
 }
 
-.about h2 {
-  color: #fff;
-
-  margin-top: 0;
+.about-content .section-label,
+.sadali-content .section-label {
+  grid-column: 1 / -1;
 }
 
-.about-text p {
-  color:
-    rgba(255,255,255,0.95);
+.about-content > h2,
+.sadali-content > h2 {
+  grid-column: 1;
+}
 
-  font-size: 1.05rem;
+.about-text,
+.sadali-text {
+  grid-column: 2;
+  padding-top: 10px;
+}
 
-  line-height: 1.7;
+.about-text p,
+.sadali-text p {
+  color: var(--muted);
+  font-size: 1.06rem;
 }
 
 .about-text h3 {
-  color: #fff;
+  margin-top: 36px;
 
-  font-weight: 700;
+  color: var(--teal);
 
-  font-size: 1.2rem;
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.1vw, 2rem);
+  font-style: italic;
+  font-weight: 400;
 }
 
 
 /* =========================================================
-   WHAT WE DO
-========================================================= */
+   10. ONE GEOMETRIC ACCENT SYSTEM
+   ========================================================= */
+
+/*
+   IMPORTANT:
+   Squares are punctuation, not decoration.
+
+   Maximum one accent per editorial section.
+*/
+
+.about::after,
+.future::after,
+.sadali::after {
+  content: "";
+
+  position: absolute;
+
+  width: clamp(42px, 5vw, 70px);
+  aspect-ratio: 1;
+
+  background: var(--teal);
+
+  pointer-events: none;
+}
+
+.about::after {
+  right: max(24px, calc((100vw - var(--container)) / 2));
+  bottom: 45px;
+}
+
+.future::after {
+  left: max(24px, calc((100vw - var(--container)) / 2));
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sadali::after {
+  right: max(24px, calc((100vw - var(--container)) / 2));
+  bottom: 48px;
+}
+
+
+/* =========================================================
+   11. COSA FACCIAMO
+   ========================================================= */
 
 .work {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(8,127,135,0.03),
-      rgba(8,127,135,0.01)
-    );
-
-  padding: 3.5rem 0;
+  background: var(--light-grey);
 }
 
 .work h2 {
-  color: var(--text);
-
-  margin-bottom: 2rem;
+  margin-bottom: clamp(55px, 7vw, 90px);
 }
 
 .work-grid {
   display: grid;
+  grid-template-columns: repeat(4, 1fr);
 
-  grid-template-columns:
-    repeat(4,1fr);
+  gap: 0;
 
-  gap: 2rem;
+  border-top: 1px solid var(--teal-line);
 }
 
 .work-item {
-  text-align: center;
+  min-width: 0;
+
+  padding: 28px 25px 15px 0;
+}
+
+.work-item + .work-item {
+  padding-left: 25px;
+  border-left: 1px solid var(--teal-line);
 }
 
 .work-item h3 {
+  margin-bottom: 18px;
+
   color: var(--teal);
 
-  font-size: .95rem;
-
-  font-weight: 700;
-
-  letter-spacing: .03em;
-
-  margin:
-    0 0 .8rem;
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
 }
 
 .work-item p {
-  color: var(--text);
-
-  font-size: .95rem;
-
   margin: 0;
 
-  line-height: 1.5;
+  color: var(--charcoal);
+
+  font-size: clamp(1rem, 1.4vw, 1.18rem);
+  line-height: 1.55;
 }
 
 
 /* =========================================================
-   ADOBIARTIS
-========================================================= */
+   12. ADOBIARTIS FEATURE
+   ========================================================= */
 
 .adobiartis {
-  background: #f7fffe;
+  background: var(--teal);
+  color: var(--white);
 
-  border-top:
-    1px solid rgba(8,127,135,0.03);
-
-  padding: 4rem 0;
+  text-align: center;
 }
 
 .adobiartis-content {
-  max-width: 720px;
+  max-width: 880px;
+  margin-inline: auto;
+}
+
+.adobiartis .section-label {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .adobiartis h2 {
-  color: var(--teal);
+  margin-inline: auto;
 
-  margin-top: 0;
+  color: var(--white);
+
+  font-size: clamp(4rem, 10vw, 8.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.06em;
 }
 
-.adobiartis p {
-  color: var(--text);
+.adobiartis .lead {
+  margin: 15px auto 50px;
 
-  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.8);
 
-  line-height: 1.7;
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+
+.adobiartis-content > p:not(.lead) {
+  max-width: 630px;
+  margin: 0 auto 48px;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  font-size: 1.08rem;
 }
 
 .adobiartis-highlight {
-  color: var(--text);
+  max-width: 760px;
 
-  font-weight: 700;
+  margin: 0 auto 48px;
 
-  font-size: 1.1rem;
+  color: var(--white);
 
-  line-height: 1.6;
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3.2vw, 3rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.adobiartis .btn.primary {
+  border: 1px solid var(--white);
+  background: var(--white);
+  color: var(--teal);
+}
+
+.adobiartis .btn.primary:hover,
+.adobiartis .btn.primary:focus-visible {
+  background: transparent;
+  color: var(--white);
 }
 
 .cta-row {
   display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 1rem;
-
-  margin-top: 1.5rem;
+  justify-content: center;
 }
 
 
 /* =========================================================
-   FUTURE
-========================================================= */
+   13. GUARDANDO AVANTI
+   ========================================================= */
 
 .future {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(8,127,135,0.01),
-      rgba(255,255,255,0)
-    );
+  background: var(--white);
+}
 
-  padding: 3.5rem 0;
+.future .container {
+  padding-left: clamp(80px, 10vw, 145px);
 }
 
 .future h2 {
-  color: var(--text);
-
-  margin-top: 0;
+  max-width: 800px;
 }
 
 .future-text {
-  max-width: 680px;
+  max-width: 590px;
 
-  font-size: 1.05rem;
+  margin-top: 34px;
 
-  color: var(--text);
+  color: var(--muted);
 
-  line-height: 1.7;
-
-  margin:
-    1.5rem 0;
+  font-size: 1.08rem;
 }
 
 .future-manifesto {
-  color: var(--text);
+  max-width: 700px;
 
-  font-weight: 700;
+  margin-top: 48px;
+  margin-bottom: 0;
 
-  font-size: 1.2rem;
+  color: var(--teal);
 
-  line-height: 1.5;
-
-  margin-top: 1.5rem;
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 2.7vw, 2.6rem);
+  font-style: italic;
+  font-weight: 400;
 }
 
 
 /* =========================================================
-   PARTICIPATE
-========================================================= */
+   14. PARTECIPA
+   ========================================================= */
 
 .participate {
-  background: var(--teal);
-
-  color: #fff;
-
-  padding: 4rem 0;
+  background: var(--light-grey);
 }
 
-.participate h2 {
-  color: #fff;
-
-  margin-top: 0;
+.participate > .container > h2 {
+  max-width: 850px;
 }
 
 .participate-intro {
-  color:
-    rgba(255,255,255,0.95);
-
-  margin-bottom: 2rem;
+  max-width: 620px;
+  margin-bottom: clamp(55px, 7vw, 85px);
 }
 
 .participate-grid {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
 
-  grid-template-columns:
-    repeat(3,1fr);
-
-  gap: 2rem;
-
-  margin-top: 2rem;
+  gap: clamp(28px, 4vw, 55px);
 }
 
 .participate-card {
+  position: relative;
+
+  padding: 30px 0 0;
+
+  border-top: 2px solid var(--teal);
+
   background: transparent;
-
-  border-radius: 0;
-
-  padding: 0;
-
-  color: #fff;
-
-  box-shadow: none;
-
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: flex-start;
-
-  min-height: auto;
 }
 
 .participate-card h3 {
-  margin:
-    0 0 1rem;
+  margin-bottom: 30px;
 
-  color: #fff;
+  color: var(--teal);
 
-  font-size: 1.05rem;
-
-  font-weight: 700;
+  font-size: 0.74rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
 }
 
 .participate-card p {
-  color:
-    rgba(255,255,255,0.92);
-
-  margin:
-    0 0 1rem;
-
-  line-height: 1.6;
+  color: var(--muted);
 }
 
 .participate-card p strong {
-  font-weight: 700;
+  display: block;
+
+  margin-bottom: 20px;
+
+  color: var(--charcoal);
+
+  font-family: var(--font-serif);
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  font-weight: 400;
+  line-height: 1.25;
 }
 
 .participate-actions {
-  margin-top: auto;
-
-  padding-top: 1rem;
+  margin-top: 30px;
 }
 
-.participate-actions a {
-  display: inline-block;
+.participate-card .btn {
+  min-height: auto;
+
+  padding: 0 0 6px;
+
+  border: 0;
+  border-bottom: 1px solid var(--teal);
+
+  background: transparent;
+
+  color: var(--teal);
+
+  font-size: 0.76rem;
+}
+
+.participate-card .btn:hover,
+.participate-card .btn:focus-visible {
+  background: transparent;
+  color: var(--teal-dark);
+  transform: translateX(4px);
 }
 
 
 /* =========================================================
-   SADALI
-========================================================= */
+   15. SADALI
+   ========================================================= */
 
 .sadali {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(8,127,135,0.02),
-      rgba(255,255,255,0.02)
-    );
-
-  padding: 3.5rem 0;
-}
-
-.sadali-content {
-  max-width: 680px;
-}
-
-.sadali h2 {
-  color: var(--text);
-
-  margin-top: 0;
+  background: var(--white);
 }
 
 .sadali-text h3 {
-  color: var(--text);
+  margin-bottom: 24px;
 
-  font-size: 1.3rem;
+  color: var(--teal);
 
-  font-weight: 700;
-
-  margin:
-    1rem 0 .8rem;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-style: italic;
+  font-weight: 400;
 }
 
 .sadali-text p {
-  color: var(--text);
+  margin-bottom: 6px;
+}
 
-  font-size: 1rem;
-
-  margin:
-    0 0 .8rem;
-
-  line-height: 1.6;
+.sadali-text strong {
+  color: var(--charcoal);
 }
 
 
 /* =========================================================
-   CONTACT
-========================================================= */
+   16. CONTACT
+   ========================================================= */
 
 .contact {
-  background: var(--bg);
+  padding-block: clamp(65px, 8vw, 95px);
 
-  padding: 3.5rem 0;
-}
-
-.contact h2 {
-  margin-top: 0;
-}
-
-.contact p {
-  color: var(--muted);
-
-  margin: .5rem 0;
-}
-
-.contact a {
-  color: var(--teal);
-
-  text-decoration: none;
-
-  font-weight: 700;
-}
-
-.contact a:hover {
-  text-decoration: underline;
-}
-
-
-/* =========================================================
-   FOOTER
-   Same structural language as AdobiArtis.
-   La Compagnia = primary brand.
-   AdobiArtis = secondary project.
-========================================================= */
-
-footer {
-  padding:
-    30px 20px 18px;
-
-  background:
-    var(--footer-bg);
-
-  color:
-    var(--footer-text);
+  background: var(--teal);
+  color: var(--white);
 
   text-align: center;
 }
 
+.contact h2 {
+  margin-inline: auto;
+  margin-bottom: 20px;
 
-/* Main centered footer stack */
+  color: var(--white);
+
+  font-size: clamp(2rem, 4vw, 3.4rem);
+}
+
+.contact p {
+  margin: 6px auto;
+
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact a {
+  color: var(--white);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+
+/* =========================================================
+   17. FOOTER
+   ========================================================= */
+
+footer {
+  padding: 30px 20px 18px;
+
+  background: var(--footer-bg);
+  color: var(--footer-text);
+
+  text-align: center;
+}
 
 .footer-content {
   max-width: 960px;
@@ -799,58 +861,37 @@ footer {
   margin: 0 auto;
 
   display: flex;
-
   flex-direction: column;
-
   align-items: center;
-
   justify-content: center;
 
   gap: 12px;
 }
 
-
-/* Primary brand area */
-
 .footer-center {
   width: 100%;
 
   display: flex;
-
   flex-direction: column;
-
   align-items: center;
-
   justify-content: center;
 
   text-align: center;
 }
 
-
-/* Shared logo container */
-
 .footer-logo {
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 }
-
-
-/* =========================================================
-   PRIMARY LOGO — LA COMPAGNIA
-========================================================= */
 
 .footer-logo-left img {
   display: block;
 
   width: auto;
-
   height: auto;
 
   max-width: 88px;
-
   max-height: 68px;
 
   object-fit: contain;
@@ -858,22 +899,14 @@ footer {
   margin: 0 auto;
 }
 
-
-/* =========================================================
-   PRIMARY BRAND
-========================================================= */
-
 .footer-brand {
   margin: 0;
 
+  color: var(--footer-text);
+
   font-size: 18px;
-
   font-weight: 700;
-
   letter-spacing: 3px;
-
-  color:
-    var(--footer-text);
 
   text-align: center;
 }
@@ -881,65 +914,44 @@ footer {
 .footer-subtitle {
   margin-top: 4px;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  color: var(--footer-muted);
 
-  font-style: italic;
-
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 13px;
-
-  color:
-    var(--footer-muted);
+  font-style: italic;
 
   text-align: center;
 }
 
-
-/* Short teal divider */
-
 .footer-line {
   width: 34px;
-
   height: 2px;
 
-  background:
-    var(--teal);
+  margin: 12px auto;
 
-  margin:
-    12px auto;
+  background: var(--teal);
 }
-
-
-/* =========================================================
-   SECONDARY PROJECT — ADOBIARTIS
-========================================================= */
 
 .footer-organizer {
   margin: 0;
 
+  color: var(--footer-muted);
+
   font-size: 9px;
-
   letter-spacing: 1px;
-
-  color:
-    var(--footer-muted);
 
   text-align: center;
 }
 
 .footer-project-link {
   display: inline-flex;
-
   flex-direction: column;
-
   align-items: center;
-
   justify-content: center;
 
-  color: inherit;
+  margin-top: 7px;
 
+  color: inherit;
   text-decoration: none;
 }
 
@@ -952,18 +964,13 @@ footer {
   color: var(--teal);
 }
 
-
-/* Smaller AdobiArtis logo */
-
 .footer-logo-right img {
   display: block;
 
   width: auto;
-
   height: auto;
 
   max-width: 76px;
-
   max-height: 58px;
 
   object-fit: contain;
@@ -971,33 +978,22 @@ footer {
   margin: 0 auto;
 }
 
-
-/* =========================================================
-   COMBINED LEGAL FOOTER
-========================================================= */
-
 .footer-legal {
   width: 100%;
-
   max-width: 520px;
 
-  margin:
-    2px auto 0;
-
+  margin: 2px auto 0;
   padding-top: 10px;
 
   display: block;
 
-  border-top:
-    1px solid var(--footer-divider);
+  border-top: 1px solid var(--footer-divider);
 
   color: #6f7777;
 
   font-size: 7px;
-
   line-height: 1.45;
-
-  letter-spacing: .15px;
+  letter-spacing: 0.15px;
 
   text-align: center;
 }
@@ -1016,256 +1012,535 @@ footer {
 .footer-legal a:visited {
   color: #667e80;
 
-  text-decoration: none;
-
   font-weight: 400;
+  text-decoration: none;
 }
 
 .footer-legal a:hover,
 .footer-legal a:focus {
-  color:
-    var(--teal);
+  color: var(--teal);
 }
 
 .footer-legal-links {
-  margin-top: 3px;
+  margin-top: 3px !important;
 }
 
 .footer-legal-links a {
   color: #667e80;
 
   font-weight: 400;
-
-  letter-spacing: .2px;
+  letter-spacing: 0.2px;
 }
 
 .footer-copyright {
-  margin-top: 3px;
+  margin-top: 3px !important;
 }
 
 
 /* =========================================================
-   SCROLL ANIMATION
-========================================================= */
-
-.scroll-fade {
-  opacity: 0;
-
-  transform:
-    translateY(10px);
-
-  transition:
-    opacity .6s ease,
-    transform .6s ease;
-}
-
-.scroll-fade.visible {
-  opacity: 1;
-
-  transform: none;
-}
-
-
-/* =========================================================
-   LEGAL PAGE
-========================================================= */
+   18. PRIVACY / LEGAL PAGE
+   ========================================================= */
 
 .legal-page {
-  max-width: 920px;
+  width: min(850px, calc(100% - 48px));
 
-  margin: 0 auto;
+  margin-inline: auto;
 
-  padding:
-    3rem 1.25rem 4rem;
+  padding-top: clamp(70px, 9vw, 110px);
+  padding-bottom: clamp(90px, 11vw, 140px);
 }
 
-.legal-page h1,
-.legal-page h2,
-.legal-page h3 {
-  color:
-    var(--text);
-}
-
-.legal-page p,
-.legal-page li {
-  color: #2d2d2d;
-
-  line-height: 1.7;
-}
-
-.legal-page .legal-back {
+.legal-back {
   display: inline-block;
 
-  margin-bottom: 1rem;
+  margin-bottom: 60px;
 
-  color:
-    var(--teal);
+  color: var(--teal);
 
+  font-size: 0.7rem;
   font-weight: 700;
+  letter-spacing: 0.13em;
 
   text-decoration: none;
 }
 
-.legal-page .page-intro {
-  margin-bottom: 2rem;
+.legal-back:hover,
+.legal-back:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 5px;
 }
 
-.legal-page .legal-meta {
-  background:
-    var(--teal-soft);
+.page-intro {
+  margin-bottom: 75px;
+  padding-bottom: 55px;
 
-  border-left:
-    3px solid var(--teal);
+  border-bottom: 1px solid var(--teal-line);
+}
 
-  padding:
-    1rem 1.2rem;
+.page-intro h1 {
+  max-width: 760px;
 
-  border-radius: 8px;
+  margin-bottom: 30px;
 
-  margin:
-    1rem 0;
+  font-size: clamp(2.7rem, 6vw, 5.5rem);
+}
+
+.page-intro p {
+  color: var(--muted);
+
+  font-size: 1.08rem;
+}
+
+.legal-page > h2 {
+  max-width: 720px;
+
+  margin-top: 65px;
+  margin-bottom: 20px;
+
+  color: var(--charcoal);
+
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.legal-page > p {
+  max-width: 720px;
+
+  margin-bottom: 18px;
+
+  color: var(--muted);
+}
+
+.legal-page strong {
+  color: var(--charcoal);
+}
+
+.legal-page a {
+  color: var(--teal);
 }
 
 
 /* =========================================================
-   TABLET
-========================================================= */
+   19. ACCESSIBILITY
+   ========================================================= */
 
-@media (max-width: 1000px) {
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 4px;
+}
+
+
+/* =========================================================
+   20. TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
 
   .hero-grid {
-    grid-template-columns: 1fr;
-
-    gap: 2rem;
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: 50px;
   }
 
-  .logo-panel {
-    order: 2;
-  }
-
-  .hero-content {
-    order: 1;
-  }
-
-  .grid {
-    grid-template-columns:
-      1fr 1fr;
+  .hero-visual {
+    min-height: 320px;
   }
 
   .work-grid {
-    grid-template-columns:
-      repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .nav-menu {
-    position: fixed;
-
-    right: 0;
-    top: 0;
-
-    height: 100vh;
-
-    background:
-      rgba(255,255,255,0.98);
-
-    width: 260px;
-
-    transform:
-      translateX(100%);
-
-    transition:
-      transform .28s ease;
-
-    padding-top: 6rem;
+  .work-item {
+    padding: 28px 25px 30px 0;
+    border-bottom: 1px solid var(--teal-line);
   }
 
-  .nav-menu ul {
-    flex-direction: column;
-
-    padding: 1rem;
+  .work-item + .work-item {
+    padding-left: 25px;
   }
 
-  .nav-menu.active {
-    transform:
-      translateX(0);
+  .work-item:nth-child(3) {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .participate-grid {
+    gap: 28px;
+  }
+
+}
+
+
+/* =========================================================
+   21. MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  :root {
+    --section-space: 78px;
+  }
+
+
+  /* -----------------------------------------
+     GENERAL
+     ----------------------------------------- */
+
+  .container {
+    width: min(
+      100% - 36px,
+      var(--container)
+    );
+  }
+
+  h1 {
+    font-size: clamp(2.7rem, 12vw, 4.6rem);
+  }
+
+  h2 {
+    font-size: clamp(2.15rem, 10vw, 3.6rem);
+  }
+
+
+  /* -----------------------------------------
+     NAVIGATION
+     ----------------------------------------- */
+
+  .nav-inner {
+    min-height: 68px;
+  }
+
+  .header-logo {
+    height: 46px;
   }
 
   .hamburger {
     display: block;
   }
 
-  .participate-grid {
-    grid-template-columns:
-      repeat(2,1fr);
+  .nav-menu {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    display: none;
+
+    padding: 25px 18px 30px;
+
+    background: var(--off-white);
+    border-bottom: 1px solid var(--line);
   }
-}
+
+  .nav-menu.active {
+    display: block;
+  }
+
+  .nav-menu ul {
+    width: min(100%, var(--container));
+
+    margin: 0 auto;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 22px;
+  }
+
+  .nav-link {
+    font-size: 0.76rem;
+  }
 
 
-/* =========================================================
-   MOBILE
-========================================================= */
+  /* -----------------------------------------
+     HERO
+     ----------------------------------------- */
 
-@media (max-width: 600px) {
+  .hero {
+    min-height: auto;
 
-  .grid {
+    padding-top: 70px;
+    padding-bottom: 85px;
+  }
+
+  .hero-grid {
     grid-template-columns: 1fr;
+    gap: 48px;
   }
 
-  .contact .form-grid {
-    grid-template-columns: 1fr;
+  .hero-visual {
+    min-height: 230px;
+
+    justify-content: flex-start;
   }
 
-  .logo.compact {
-    height: 32px;
+  .hero-logo {
+    width: min(70vw, 270px);
   }
 
   .hero-graphics {
-    display: none;
+    width: min(85vw, 330px);
+
+    left: -30px;
+  }
+
+  .hero-content .lead {
+    margin-bottom: 28px;
+  }
+
+  .hero-ctas {
+    align-items: flex-start;
+  }
+
+
+  /* -----------------------------------------
+     EDITORIAL SECTIONS
+     ----------------------------------------- */
+
+  .about-content,
+  .sadali-content {
+    grid-template-columns: 1fr;
+    row-gap: 15px;
+  }
+
+  .about-content .section-label,
+  .sadali-content .section-label,
+  .about-content > h2,
+  .sadali-content > h2,
+  .about-text,
+  .sadali-text {
+    grid-column: 1;
+  }
+
+  .about-text,
+  .sadali-text {
+    padding-top: 12px;
+  }
+
+
+  /* -----------------------------------------
+     ACCENTS
+     ----------------------------------------- */
+
+  .about::after,
+  .future::after,
+  .sadali::after {
+    width: 38px;
+  }
+
+  .about::after {
+    right: 18px;
+    bottom: 22px;
+  }
+
+  .future::after {
+    left: auto;
+    right: 18px;
+    top: auto;
+    bottom: 22px;
+
+    transform: none;
+  }
+
+  .sadali::after {
+    right: 18px;
+    bottom: 22px;
+  }
+
+
+  /* -----------------------------------------
+     WORK
+     ----------------------------------------- */
+
+  .work h2 {
+    margin-bottom: 50px;
   }
 
   .work-grid {
     grid-template-columns: 1fr;
 
-    gap: 1.5rem;
+    border-top: 1px solid var(--teal-line);
+  }
+
+  .work-item,
+  .work-item + .work-item,
+  .work-item:nth-child(3) {
+    padding: 25px 0;
+
+    border-left: 0;
+    border-bottom: 1px solid var(--teal-line);
+  }
+
+  .work-item:last-child {
+    border-bottom: 0;
+  }
+
+
+  /* -----------------------------------------
+     ADOBIARTIS
+     ----------------------------------------- */
+
+  .adobiartis h2 {
+    font-size: clamp(3.5rem, 17vw, 6rem);
+  }
+
+  .adobiartis .lead {
+    margin-bottom: 38px;
+  }
+
+  .adobiartis-content > p:not(.lead) {
+    margin-bottom: 38px;
+  }
+
+  .adobiartis-highlight {
+    margin-bottom: 40px;
+  }
+
+
+  /* -----------------------------------------
+     FUTURE
+     ----------------------------------------- */
+
+  .future .container {
+    padding-left: 0;
+  }
+
+  .future-text {
+    margin-top: 28px;
+  }
+
+  .future-manifesto {
+    margin-top: 38px;
+  }
+
+
+  /* -----------------------------------------
+     PARTECIPA
+     ----------------------------------------- */
+
+  .participate-intro {
+    margin-bottom: 48px;
   }
 
   .participate-grid {
     grid-template-columns: 1fr;
+    gap: 48px;
   }
 
-  /*
-     No footer grid changes here.
-     Footer remains the same centered
-     vertical composition on mobile.
-  */
+  .participate-card {
+    padding-top: 24px;
+  }
+
+
+  /* -----------------------------------------
+     CONTACT
+     ----------------------------------------- */
+
+  .contact {
+    padding-block: 65px;
+  }
+
+  .contact p {
+    overflow-wrap: anywhere;
+  }
+
+
+  /* -----------------------------------------
+     FOOTER
+     ----------------------------------------- */
+
+  footer {
+    padding-top: 28px;
+  }
 
   .footer-brand {
     font-size: 16px;
-
     letter-spacing: 2px;
   }
 
   .footer-logo-left img {
     max-width: 82px;
-
     max-height: 64px;
   }
 
   .footer-logo-right img {
     max-width: 68px;
-
     max-height: 54px;
   }
+
+
+  /* -----------------------------------------
+     LEGAL
+     ----------------------------------------- */
+
+  .legal-page {
+    width: calc(100% - 36px);
+
+    padding-top: 60px;
+    padding-bottom: 90px;
+  }
+
+  .legal-back {
+    margin-bottom: 45px;
+  }
+
+  .page-intro {
+    margin-bottom: 55px;
+    padding-bottom: 42px;
+  }
+
+  .legal-page > h2 {
+    margin-top: 50px;
+  }
+
 }
 
 
 /* =========================================================
-   ACCESSIBILITY
-========================================================= */
+   22. SMALL MOBILE
+   ========================================================= */
 
-a:focus {
-  outline:
-    3px solid rgba(8,127,135,0.12);
+@media (max-width: 480px) {
 
-  outline-offset: 3px;
+  .hero-ctas {
+    flex-direction: column;
+  }
+
+  .hero-ctas .btn {
+    width: 100%;
+  }
+
+  .section-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.17em;
+  }
+
+  .adobiartis-highlight {
+    font-size: 1.7rem;
+  }
+
+}
+
+
+/* =========================================================
+   23. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
 }
